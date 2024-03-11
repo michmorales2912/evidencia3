@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Pedidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+    <style>
+        /* Estilos comunes */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        /* ... Otros estilos ... */
+    </style>
+</head>
+<body>
+    <h1>Sistema de Pedidos</h1>
+    <nav>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                <li><a href="{{ url_for('menu') }}">Menú</a></li>
+                <li><a href="{{ url_for('sistema_pedidos') }}">Sistema de Pedidos</a></li>
+                <li><a href="{{ url_for('realizar_pedido') }}">Realizar Pedido</a></li>
+            </ul>
+    
+    </nav>
+
+    <!-- Contenido específico de la página principal -->
+    <p>Bienvenido al Sistema de Pedidos. Haz clic en los enlaces de arriba para explorar las secciones.</p>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Pedidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <h1>Sistema de Pedidos</h1>
+    <ul>
+        {% for item in current_order %}
+            <li>{{ item.quantity }} x {{ item.item }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">
+        <button>Regresar al Inicio</button>
+    </a>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realizar Pedido</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <h1>Realizar Pedido</h1>
+
+    <!-- Contenido específico de realizar pedido -->
+    <form method="post" action="{{ url_for('realizar_pedido') }}">
+        <label for="order-item">Seleccionar ítem:</label>
+        <select name="order-item" id="order-item">
+            <option value="Pizza especial">Pizza especial</option>
+            <option value="Boneless Naturales">Boneless Naturales</option>
+           
+        </select>
+    
+        <label for="quantity">Cantidad:</label>
+        <input type="number" name="quantity" id="quantity" min="1" value="1">
+    
+        <button type="submit">Añadir al Pedido</button>
+    </form>
+    <a href="{{ url_for('index') }}">
+        <button>Regresar al Inicio</button>
+    </a>
+
+</body>
+</html>
