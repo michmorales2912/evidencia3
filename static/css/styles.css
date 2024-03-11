@@ -1,10 +1,8 @@
-/* Estilos comunes */
 body {
     font-family: Arial, sans-serif;
     margin: 20px;
 }
 
-/* Estilos para la navegación */
 nav {
     margin-top: 10px;
 }
@@ -20,9 +18,7 @@ nav li {
     margin-right: 10px;
 }
 
-/* Estilos específicos de cada página */
 h1 {
     color: #333;
 }
 
-/* ... Otros estilos ... */

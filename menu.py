@@ -57,6 +57,5 @@ class Menu:
         for item in lista_items:
             print(f"{item['id']} {item['nombre']} ${item['precio']}")
 
-# Ejemplo de uso
 menu_restaurante = Menu()
 menu_restaurante.mostrar_menu()

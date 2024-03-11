@@ -7,13 +7,35 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
     <style>
-        /* Estilos comunes */
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            background-color: #f0f0f0;
         }
 
-        /* ... Otros estilos ... */
+        table {
+            width: 100%;
+            margin-top: 50px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        a {
+            display: block;
+            background-color: #777;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #555;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -27,9 +49,7 @@
             </ul>
     
     </nav>
-
-    <!-- Contenido específico de la página principal -->
-    <p>Bienvenido al Sistema de Pedidos. Haz clic en los enlaces de arriba para explorar las secciones.</p>
+    
 
 </body>
 </html>

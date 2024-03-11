@@ -9,13 +9,15 @@
 </head>
 <body>
     <h1>Menú</h1>
-
-    <!-- Contenido específico del menú -->
+    <img src="{{ url_for('static', filename='img/menu.png') }}" alt="Pizza" width="400">
+    {% for categoria, items in menu.items() %}
+    <h2>{{ categoria }}</h2>
     <ul>
-        <li>Pizza especial - $289</li>
-        <li>Boneless Naturales - $175</li>
-        <!-- ... otros elementos del menú ... -->
+        {% for item in items %}
+            <li>{{ item.id }} {{ item.nombre }} - ${{ item.precio }}</li>
+        {% endfor %}
     </ul>
+{% endfor %}
     <a href="{{ url_for('index') }}">
         <button>Regresar al Inicio</button>
     </a>

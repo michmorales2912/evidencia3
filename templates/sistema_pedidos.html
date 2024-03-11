@@ -9,11 +9,37 @@
 </head>
 <body>
     <h1>Sistema de Pedidos</h1>
+    
+    <h2>Acciones:</h2>
+    
+    <h3>Caja:</h3>
+    <ul>
+        <li>#10 {{ menu_caja.accion_1 }}</li>
+        <li>#40 {{ menu_caja.accion_2 }}</li>
+        <li>#30 {{ menu_caja.accion_3 }}</li>
+    </ul>
+
+    <h3>Meseros:</h3>
+    <ul>
+        <li>#10 {{ menu_meseros.accion_1 }}</li>
+        <li>#20 {{ menu_meseros.accion_2 }}</li>
+        <li>#20 {{ menu_meseros.accion_3 }}</li>
+    </ul>
+
+    <h3>Cocina:</h3>
+    <ul>
+        <li>#20 {{ menu_cocina.accion_1 }}</li>
+        <li>#30 {{ menu_cocina.accion_2 }}</li>
+        <li>#30 {{ menu_cocina.accion_3 }}</li>
+    </ul>
+
+    <h2>Pedidos:</h2>
     <ul>
         {% for item in current_order %}
             <li>{{ item.quantity }} x {{ item.item }}</li>
         {% endfor %}
     </ul>
+
     <a href="{{ url_for('index') }}">
         <button>Regresar al Inicio</button>
     </a>
