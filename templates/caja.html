@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Pedidos</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+
+<h1>Sistema de Pedidos</h1>
+
+<div class="area-container">
+    <div class="area">
+        <h2>Caja</h2>
+        <button class="action-btn" onclick="{{ caja.sumar_ordenes() }}">Sumar</button>
+        <button class="action-btn" onclick="{{ caja.quitar_elemento() }}">Quitar Elemento</button>
+    </div>
+
+    <div class="area">
+        <h2>Meseros</h2>
+        <button class="action-btn" onclick="{{ meseros.agregar_orden() }}">Añadir</button>
+        <button class="action-btn" onclick="{{ meseros.consultar_orden() }}">Consultar</button>
+    </div>
+
+    <div class="area">
+        <h2>Cocina</h2>
+        <button class="action-btn" onclick="{{ cocina.consultar_orden() }}">Consultar</button>
+        <button class="action-btn" onclick="{{ cocina.eliminar_orden_producida() }}">Eliminar Orden</button>
+    </div>
+</div>
+
+<div class="output">
+    <pre id="output"></pre>
+</div>
+
+</body>
+</html>

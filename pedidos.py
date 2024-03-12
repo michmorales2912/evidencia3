@@ -1,70 +1,52 @@
 class SistemaPedidos:
     def __init__(self):
-        self.ordenes = []
+        self.ordenes = [] 
+        self.cola_pedidos = [] 
 
     def verificar_estructura_vacia(self):
-        return len(self.ordenes) == 0
+        return not self.ordenes
 
-    def agregar_orden(self, orden):
+    def agregar_orden(self, num_mesa, elementos):
         if len(self.ordenes) < 6:
-            self.ordenes.append(orden)
+            nueva_orden = {"num_mesa": num_mesa, "elementos": elementos}
+            self.ordenes.append(nueva_orden)
+            self.cola_pedidos.append(nueva_orden)
             print("La orden fue registrada con éxito.")
         else:
             print("El sistema no acepta más de 6 órdenes al mismo tiempo.")
 
     def consultar_orden(self):
-        return self.ordenes
-
-    def eliminar_orden(self, numero_orden):
-        if numero_orden < len(self.ordenes):
-            del self.ordenes[numero_orden]
-            print(f"Orden {numero_orden} eliminada correctamente.")
+        if self.ordenes:
+            return self.ordenes[-1]
         else:
-            print("Número de orden no válido.")
+            return None
 
-    def sumar_orden(self):
-        total = 0
+    def eliminar_orden_producida(self):
+        if self.ordenes:
+            orden_eliminada = self.ordenes.pop()
+            print(f"Orden eliminada: {orden_eliminada}")
+        else:
+            print("No hay órdenes para eliminar.")
+
+    def sumar_ordenes(self):
+        if self.ordenes:
+            total = sum(len(orden["elementos"]) for orden in self.ordenes)
+            return total
+        else:
+            return 0
+
+    def quitar_elemento(self, num_mesa, elemento):
         for orden in self.ordenes:
-            total += orden.precio
-        return total
+            if orden["num_mesa"] == num_mesa:
+                if elemento in orden["elementos"]:
+                    orden["elementos"].remove(elemento)
+                    print(f"Elemento {elemento} eliminado de la orden {num_mesa}.")
+                    return
+                else:
+                    print(f"El elemento {elemento} no está en la orden {num_mesa}.")
+                    return
+        print(f"No se encontró la orden {num_mesa}.")
 
-    def quitar_elemento(self, numero_orden, elemento):
-        if numero_orden < len(self.ordenes):
-            if elemento in self.ordenes[numero_orden].elementos:
-                self.ordenes[numero_orden].elementos.remove(elemento)
-                print(f"Elemento {elemento} eliminado de la orden {numero_orden}.")
-            else:
-                print(f"Elemento {elemento} no encontrado en la orden {numero_orden}.")
-        else:
-            print("Número de orden no válido.")
-#Caja
-class MenuCaja:
-    def __init__(self):
-        self.accion_1 = "Sumar"
-        self.accion_2 = "Quitar_elemento"
-        self.accion_3 = "Eliminar_orden"
-
-menu_caja = MenuCaja()
-
-class MenuMeseros:
-    def __init__(self):
-        self.accion_1 = "Añadir"
-        self.accion_2 = "Consultar"
-        self.accion_3 = "Consultar"
-
-menu_meseros = MenuMeseros()
-
-class MenuCocina:
-    def __init__(self):
-        self.accion_1 = "Consultar"
-        self.accion_2 = "Consultar"
-        self.accion_3 = "Eliminar_orden"
-
-menu_cocina = MenuCocina()
-
-
-
-
-
-
+# Objeto 
+sistema = SistemaPedidos()
 
