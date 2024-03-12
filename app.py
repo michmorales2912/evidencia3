@@ -1,14 +1,11 @@
 from flask import Flask, render_template, request, redirect, session
 import os
 from menu import Menu
-from pedidos import MenuCaja, MenuMeseros, MenuCocina
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
 app.secret_key = os.urandom(24)
 menu_restaurante = Menu()
-menu_caja = MenuCaja()
-menu_meseros = MenuMeseros()
-menu_cocina = MenuCocina()
+
 
 #Index
 @app.route('/')
@@ -45,10 +42,8 @@ def realizar_pedido():
 @app.route('/sistema_pedidos')
 def sistema_pedidos():
     current_order = session.get('current_order', [])
-    menu_caja = MenuCaja()
-    menu_meseros = MenuMeseros()
-    menu_cocina = MenuCocina()
     return render_template('sistema_pedidos.html', current_order=current_order)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

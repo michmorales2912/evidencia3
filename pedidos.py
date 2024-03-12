@@ -37,8 +37,6 @@ class SistemaPedidos:
                 print(f"Elemento {elemento} no encontrado en la orden {numero_orden}.")
         else:
             print("Número de orden no válido.")
-
-
 #Caja
 class MenuCaja:
     def __init__(self):
@@ -64,20 +62,9 @@ class MenuCocina:
 
 menu_cocina = MenuCocina()
 
-print("Caja:")
-print(f"#10 {menu_caja.accion_1}")
-print(f"#40 {menu_caja.accion_2}")
-print(f"#30 {menu_caja.accion_3}")
 
-print("\nMeseros:")
-print(f"#10 {menu_meseros.accion_1}")
-print(f"#20 {menu_meseros.accion_2}")
-print(f"#20 {menu_meseros.accion_3}")
 
-print("\nCocina:")
-print(f"#20 {menu_cocina.accion_1}")
-print(f"#30 {menu_cocina.accion_2}")
-print(f"#30 {menu_cocina.accion_3}")
+
 
 
 
